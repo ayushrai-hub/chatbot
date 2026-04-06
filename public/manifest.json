@@ -1,0 +1,15 @@
+{
+  "short_name": "ChatBot",
+  "name": "Chat Bot Assistant",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#667eea",
+  "background_color": "#ffffff"
+}

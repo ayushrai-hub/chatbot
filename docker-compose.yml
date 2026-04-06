@@ -1,0 +1,35 @@
+services:
+  api:
+    build:
+      context: ./server
+    environment:
+      - PORT=5050
+      - NODE_ENV=production
+      - SQLITE_PATH=/app/data/appointments.db
+    expose:
+      - "5050"
+    volumes:
+      - api_data:/app/data
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "node -e \"require('http').get('http://127.0.0.1:5050/health',res=>{res.resume();res.on('end',()=>process.exit(res.statusCode===200?0:1));}).on('error',()=>process.exit(1));\"",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  web:
+    build:
+      context: .
+      args:
+        - REACT_APP_API_URL=
+    ports:
+      - "8080:80"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  api_data:

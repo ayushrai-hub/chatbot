@@ -1,0 +1,10 @@
+node_modules
+build
+.git
+chatbot-master
+coverage
+.env
+.env.*
+!.env.example
+*.md
+.cursor
