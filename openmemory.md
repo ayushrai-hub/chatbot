@@ -19,6 +19,7 @@ Doctor appointment **chatbot** with React UI and Express API. Persistence is **S
 
 - **Controlled responses**: no generative text; only structured fields from SQL rows.
 - **Atomic booking**: `UPDATE … WHERE status='available'` then `INSERT`; conflict → 409 / chat fallback.
+- **Docs**: [API_DOCS.md](API_DOCS.md) is the canonical HTTP contract; [ARCHITECTURE.md](ARCHITECTURE.md) and [CODEBASE_GUIDE.md](CODEBASE_GUIDE.md) match the current tree.
 
 ## User Defined Namespaces
 

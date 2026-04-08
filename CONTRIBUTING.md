@@ -52,17 +52,27 @@ git checkout -b fix/your-bug-fix
 ### Running the Application
 
 ```bash
-# Development mode with hot reload
+# API (required for chat): from repo root
+npm run server
+
+# Development mode with hot reload (second terminal)
 npm start
 
-# Run tests
+# API integration tests
+npm run test:server
+
+# Frontend tests (non-interactive)
+CI=true npm test -- --watchAll=false
+```
+
+HTTP API details: [API_DOCS.md](API_DOCS.md).
+
+```bash
+# Legacy shorthand — opens interactive test watcher unless CI=true
 npm test
 
 # Build for production
 npm run build
-
-# Check for linting issues
-npm run lint
 ```
 
 ### Making Changes

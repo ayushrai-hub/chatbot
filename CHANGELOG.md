@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2026-04-07
+
+### Added
+
+- **API_DOCS.md** — HTTP reference for `/health`, `/doctors`, `/availability`, `/book-appointment`, and `POST /user` (payloads, status codes, session behavior).
+
+### Changed
+
+- **ARCHITECTURE.md** — Rewritten for the current stack (doctor appointment chatbot, sql.js, Express, Docker/nginx), replacing outdated “AI echo” and legacy file paths.
+- **CODEBASE_GUIDE.md** — Aligned with actual `src/` and `server/` layout (`App.jsx`, `ChatContainer`, repositories, routes).
+
+### Fixed
+
+- **chatHandler** — `start_booking` intent from `handleIdle` now returns the doctor-selection booking prompt instead of `null`, avoiding a fall-through with no reply in edge cases.
+
 ## [2.0.0] - 2026-04-05
 
 ### 🚀 Major Refactoring & Modernization

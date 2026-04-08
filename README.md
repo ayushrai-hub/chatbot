@@ -89,6 +89,8 @@ FAQ copy lives in `server/db/seed.js` (initial rows) and can be edited in the da
 
 ## REST API (for integrations)
 
+Full request/response details and error codes: **[API_DOCS.md](API_DOCS.md)**.
+
 | Method | Path | Description |
 |--------|------|-------------|
 | `GET` | `/health` | Liveness |
