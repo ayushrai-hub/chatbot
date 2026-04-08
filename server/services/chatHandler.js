@@ -111,8 +111,10 @@ function handleIdle(db, msg) {
       const header = `${T.formatDoctorDetails(d)}\n\n`;
       return { reply: header + T.formatAvailabilityDates(dates), enterFaqPick: false };
     }
-    case 'start_booking':
-      return null;
+    case 'start_booking': {
+      const doctors = doctorsRepo.listDoctors(db);
+      return { reply: T.bookingAskDoctor(doctors), enterFaqPick: false };
+    }
     default: {
       const list = faqsRepo.listFaqs(db);
       return { reply: T.formatFaqMenu(list), enterFaqPick: true };
